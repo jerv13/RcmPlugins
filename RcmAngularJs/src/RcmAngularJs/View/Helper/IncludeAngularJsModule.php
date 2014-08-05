@@ -65,7 +65,7 @@ class IncludeAngularJsModule extends AbstractHelper
         }
 
         $headScript->prependFile(
-            '/modules/rcm-angular-js/angular/angular.min.js'
+            '/modules/rcm-angular-js/angular/angular.js'
         );
     }
 

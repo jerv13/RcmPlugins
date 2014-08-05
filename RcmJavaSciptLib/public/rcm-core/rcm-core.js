@@ -101,12 +101,7 @@ var rcm = new function () {
      * @returns {boolean}
      */
     self.hasModule = function(moduleName){
-
-        if (self.moduleDepenencies.indexOf(moduleName) < 0) {
-            return false;
-        }
-
-        return true;
+        return jQuery.inArray(moduleName, self.moduleDepenencies);
     }
 
     /**
