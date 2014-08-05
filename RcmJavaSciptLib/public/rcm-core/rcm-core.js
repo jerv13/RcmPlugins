@@ -22,7 +22,7 @@ var rcm = new function () {
      */
     self.addAngularModule = function (moduleName, lazyloadConfig) {
 
-        if (self.hasModule(moduleName)){
+        if (self.hasModule(moduleName)) {
 
             //self.console.log('Module (' + moduleName + ') already registered.');
             return;
@@ -89,7 +89,7 @@ var rcm = new function () {
      */
     self.pushModuleName = function (moduleName) {
 
-        if (!self.hasModule(moduleName)){
+        if (!self.hasModule(moduleName)) {
 
             self.moduleDepenencies.push(moduleName);
         }
@@ -100,14 +100,9 @@ var rcm = new function () {
      * @param moduleName
      * @returns {boolean}
      */
-    self.hasModule = function(moduleName){
-
-        if (self.moduleDepenencies.indexOf(moduleName) < 0) {
-            return false;
-        }
-
-        return true;
-    }
+    self.hasModule = function (moduleName) {
+        return jQuery.inArray(moduleName, self.moduleDepenencies);
+    };
 
     /**
      *
@@ -148,10 +143,10 @@ var rcm = new function () {
 
                 self.scope = angular.element(document).scope();
 
-                self.scope.safeApply = function(fn) {
+                self.scope.safeApply = function (fn) {
                     var phase = self.scope.$root.$$phase;
-                    if(phase == '$apply' || phase == '$digest') {
-                        if(fn && (typeof(fn) === 'function')) {
+                    if (phase == '$apply' || phase == '$digest') {
+                        if (fn && (typeof(fn) === 'function')) {
                             fn();
                         }
                     } else {
