@@ -102,7 +102,7 @@ var rcm = new function () {
      */
     self.hasModule = function(moduleName){
         return jQuery.inArray(moduleName, self.moduleDepenencies);
-    };
+    }
 
     /**
      *
@@ -199,7 +199,7 @@ var rcm = new function () {
 
     // construct
     self.initConsole();
-    self.init(document);
+    self.init(document.querySelectorAll('html'));
 };
 
 //angular.element(document).ready(
