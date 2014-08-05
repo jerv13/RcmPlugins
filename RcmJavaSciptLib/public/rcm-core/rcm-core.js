@@ -199,7 +199,7 @@ var rcm = new function () {
 
     // construct
     self.initConsole();
-    self.init(document.querySelectorAll('html'));
+    self.init(document);
 };
 
 //angular.element(document).ready(
